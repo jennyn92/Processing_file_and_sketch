@@ -1,0 +1,26 @@
+#set background colour
+size(600,300)
+background('#050002')
+noStroke()
+
+#make a list for colours
+colour_list = [ '#050002', '#ED6779', '#F7C75F', '#F5F28F', '#A5E3A7', '#A5EDEB', '#D0C0EA', '#FAB6F9', '#050002']
+
+#set position for centre of circle
+x_pos_circ= 300
+y_pos_circ=300
+
+#set initial size for circle
+circle_size= 550
+
+#make function for making rainbow, first add fill(colour)
+#iterates through colour list and reduces size each time by 50
+def make_rainbow(colour,size):
+    fill(colour)
+    circle(x_pos_circ,y_pos_circ, size)
+    
+for col in colour_list:
+    make_rainbow(col, circle_size)
+    circle_size -=50
+
+save("new_rainbow.jpeg");
